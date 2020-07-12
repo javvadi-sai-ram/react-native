@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
   Image,
+  Button,
 } from 'react-native';
 import {
   Header,
@@ -27,7 +28,7 @@ import {
 import Counter from '../../components/Counter';
 
 import EnvironmentConstants from '../../constants/EnvironmentConstants';
-import {goToLaunchScene} from '../../utils/NavigationUtils';
+import {goToLaunchScene, goSignInScene} from '../../utils/NavigationUtils';
 import Images from '../../images';
 import I18n from '../../i18n/i18n';
 
@@ -35,6 +36,9 @@ var global: any;
 const AppScene = () => {
   const goToLaunchScreen = () => {
     goToLaunchScene();
+  };
+  const goSignInScenes = () => {
+    goSignInScene();
   };
   return (
     <Fragment>
@@ -55,7 +59,7 @@ const AppScene = () => {
               <Text>{EnvironmentConstants.SAMPLE_ENV_VARIABLE}</Text>
               <Text style={styles.sectionTitle}>{I18n.t('stepOne')}</Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
+                Edit <Text style={styles.highlight}>sai.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
             </View>
@@ -78,6 +82,14 @@ const AppScene = () => {
               <Text style={styles.sectionDescription}>
                 Read the docs to discover what to do next:
               </Text>
+            </View>
+            <View>
+              <Button
+                onPress={goSignInScenes}
+                title="SignInForm"
+                color="#841584"
+                accessibilityLabel="Learn more about this SignInForm"
+              />
             </View>
             <LearnMoreLinks />
             <Counter />
